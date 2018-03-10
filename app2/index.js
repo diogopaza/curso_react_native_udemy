@@ -6,6 +6,7 @@ import {
   View,
   AppRegistry,
   Button,
+  TouchableOpacity,
 
 } from 'react-native';
 
@@ -14,6 +15,21 @@ const Estilos = {
 	principal:{
 
 		paddingTop:40
+	},
+	botao:{
+		backgroundColor: '#48BBEC',
+		padding:10,
+		borderColor: '#1d8eb8',
+		borderWidth: 1,
+		borderRadius: 8,
+		
+	},
+	textoBotao:{
+		color:'#fff',
+		fontSize:16,
+		fontWeight:'bold',
+		alignSelf:'center',
+
 	}
 
 };
@@ -25,18 +41,16 @@ const botaoPressionado = () =>{
 
 const App = () => {
 	
-	const{ principal } = Estilos;
+	const{ principal, botao, textoBotao } = Estilos;
   
   return(
   	<View style={ principal }>
-  		<Button 
-  			onPress={botaoPressionado}
-  			title="Clique aqui"
-  			color="#841584"
-  			accessibilityLabel="Clique aqui para abrir as notícias"
+  		<TouchableOpacity style={ botao }>
+  			<Text style={ textoBotao }>Clique aqui</Text>
 
+  		</TouchableOpacity>
 
-  		/>
+  		
 
 
   		 
