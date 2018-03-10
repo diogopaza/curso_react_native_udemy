@@ -10,28 +10,32 @@ import {
 const Estilos = {
 	
 	principal:{
-		backgroundColor: 'cornflowblue',
+		backgroundColor: 'cornflowerblue',
+		flex:1, 
 	},
-	conteudo1:{
-		backgroundColor: 'brow',
+	topo:{
+		backgroundColor: 'brown',
+		flex:2,
 	},
-	conteudo2:{
+	conteudo:{
 		backgroundColor: 'yellowgreen',
+		flex:8,
 	},
-	conteudo3:{
+	rodape:{
 		backgroundColor: 'orangered',
+		flex:1,
 	},
 
 }
 
 const App = () =>{
-	const{ principal, conteudo1, conteudo2, conteudo3 } = Estilos
+	const{ principal, topo, conteudo, rodape } = Estilos
   return(
   	<View style={ principal }>
   		 
-  		 <Text style={ conteudo1 } >B</Text>
-  		 <Text style={ conteudo2 } >C</Text>
-  		 <Text style={ conteudo3 } >C</Text>
+  		 <Text style={ topo } >Topo</Text>
+  		 <Text style={ conteudo } >conteudo2</Text>
+  		 <Text style={ rodape } >rodapé</Text>
   	</View>
      
 
