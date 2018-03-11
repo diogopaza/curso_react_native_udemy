@@ -7,6 +7,8 @@ import {
   AppRegistry,
   Button,
   TouchableOpacity,
+  Image,
+  ImageBackground,
 
 } from 'react-native';
 
@@ -16,39 +18,29 @@ const Estilos = {
 
 		paddingTop:40
 	},
-	botao:{
-		backgroundColor: '#48BBEC',
-		padding:10,
-		borderColor: '#1d8eb8',
-		borderWidth: 1,
-		borderRadius: 8,
-		
-	},
-	textoBotao:{
-		color:'#fff',
-		fontSize:16,
-		fontWeight:'bold',
-		alignSelf:'center',
-
+	imagem:{
+		width:300, 
+		height:300,
+		justifyContent: 'flex-end',
+		paddingBottom:20
 	}
+
 
 };
 
-const botaoPressionado = () =>{
 
-	alert('pressionei');
-}
 
 const App = () => {
 	
-	const{ principal, botao, textoBotao } = Estilos;
+	const{ principal,imagem  } = Estilos;
   
   return(
   	<View style={ principal }>
-  		<TouchableOpacity style={ botao }>
-  			<Text style={ textoBotao }>Clique aqui</Text>
-
-  		</TouchableOpacity>
+  		<ImageBackground source={ require('./imgs/uvas.png')}
+  			style={ imagem }>
+  			<Text>Legenda para a foto</Text>
+  		</ImageBackground>
+  		
 
   		
 
