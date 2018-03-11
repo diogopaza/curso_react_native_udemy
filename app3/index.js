@@ -8,20 +8,11 @@ import {
   Button
 } from 'react-native';
 
-class MeuComponente extends Component{
 
 
 
-	render(){
-		return(
-			<View>
-				<Text>{ this.props.teste }</Text>
-				
-			</View>
 
-			);
-	};
-}
+
 
 class app3 extends Component{
 
@@ -29,25 +20,38 @@ class app3 extends Component{
 		super(props);
 
 		this.state = {
-			texto: 'Texto teste 2 '
+			opcaoUsuario: ' '
 		}
 
 	}
 
-	alteraTexto(){
-		this.setState( { texto: 'outra coisa'} );
+	jokenpo(escolhaUsuario){
+		
+		this.setState( { opcaoUsuario: escolhaUsuario  })
+
 	}
+
 
 
 	render(){
 
 		return(
 			<View>
-				<MeuComponente teste={ this.state.texto }></MeuComponente>
-				<Button 
-					onPress={() => {this.alteraTexto()} }
-					title="Botao"
-				/>
+				<Text>Escolha do Computador</Text>
+				<Text>Escolha do Usuário: { this.state.opcaoUsuario }</Text>
+				<Text>Resultado</Text>
+				<Button
+					onPress={()=> { this.jokenpo('pedra') } }
+					title="pedra"
+					/>
+				<Button
+					onPress={()=> { this.jokenpo('papel') } }
+					title="papel"
+					/>
+				<Button
+					onPress={()=> { this.jokenpo('tesoura') } }
+					title="tesoura"
+					/>
 			</View>
 			
 			);
