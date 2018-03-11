@@ -4,17 +4,19 @@ import {
   StyleSheet,
   Text,
   View,
-  AppRegistry
+  AppRegistry,
+  Button
 } from 'react-native';
 
 class MeuComponente extends Component{
 
+
+
 	render(){
 		return(
 			<View>
-				<Text>{this.props.propriedade1}</Text>
-				<Text>{this.props.xyz}</Text>
-				<Text>{this.props.p}</Text>
+				<Text>{ this.props.teste }</Text>
+				
 			</View>
 
 			);
@@ -23,11 +25,31 @@ class MeuComponente extends Component{
 
 class app3 extends Component{
 
+	constructor(props){
+		super(props);
+
+		this.state = {
+			texto: 'Texto teste 2 '
+		}
+
+	}
+
+	alteraTexto(){
+		this.setState( { texto: 'outra coisa'} );
+	}
+
+
 	render(){
 
 		return(
-			<MeuComponente propriedade1='Banana' xyz='abacaxi' p='uva'></MeuComponente>
-
+			<View>
+				<MeuComponente teste={ this.state.texto }></MeuComponente>
+				<Button 
+					onPress={() => {this.alteraTexto()} }
+					title="Botao"
+				/>
+			</View>
+			
 			);
 	};
 }
