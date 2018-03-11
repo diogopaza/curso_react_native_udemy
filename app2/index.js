@@ -9,37 +9,71 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  Alert,
 
 } from 'react-native';
 
 const Estilos = {
 	
 	principal:{
-
-		paddingTop:40
+		
+		paddingTop:40,
+		alignItems:'center',
+		justifyContent:'center',
+		flex:1
 	},
-	imagem:{
-		width:300, 
-		height:300,
-		justifyContent: 'flex-end',
-		paddingBottom:20
+	
+	botao:{
+		backgroundColor:'#538530',
+		paddingVertical:10,
+		paddingHorizontal:40,
+		marginTop:20
+	},
+	textoBotao:{
+		color:'white',
+		fontSize:16,
+		fontWeight:'bold'
 	}
 
 
 };
 
+const gerarNovaFrase = () =>{
 
+	var numAleatorio = Math.random() * 5;
+	numAleatorio = Math.floor(numAleatorio);
+	alert(numAleatorio);
+
+		var frases = [];
+
+		frases[0] ='aa';
+		frases[1] ='bb';
+		frases[2] ='cc';
+		frases[3] ='dd';
+		frases[4] ='ee';
+
+		var fraseEscolhida = frases[ numAleatorio ];
+
+		Alert.alert( fraseEscolhida );
+
+
+}
 
 const App = () => {
 	
-	const{ principal,imagem  } = Estilos;
+	const{ principal,botao,imagem,textoBotao  } = Estilos;
   
   return(
   	<View style={ principal }>
-  		<ImageBackground source={ require('./imgs/uvas.png')}
-  			style={ imagem }>
-  			<Text>Legenda para a foto</Text>
-  		</ImageBackground>
+  		<Image source={ require('./imgs/logo.png')}
+  			 />
+  			
+  		<TouchableOpacity 
+  			onPress={gerarNovaFrase}
+  			style={ botao }>
+  			<Text style={ textoBotao}>Nova Frase</Text>     		
+
+    	</TouchableOpacity>
   		
 
   		
